@@ -33,7 +33,11 @@ cd "${WORKING_DIR}"
 # Add binaries path to `PATH` environment
 export PATH="${PATH}":"${HOME}"/"${VENDOR_DIR}"
 
+status "Make directories if they don't exist"
+
 status "Creating symlinks to optimizers for next buildpack(s)"
+
+mkdir -p /tmp/codon/vendor/bin
 
 ln -s "${BUILD_DIR}/${VENDOR_DIR}/advpng" /tmp/codon/vendor/bin/advpng
 ln -s "${BUILD_DIR}/${VENDOR_DIR}/gifsicle" /tmp/codon/vendor/bin/gifsicle
